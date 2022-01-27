@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <title>Instakilogram</title>
+</head>
+<body>
+    <div class="center">
+    <div class="main">
+            <div><img src="./phone.png" width="400"></div>
+        <div class="loginForm">
+            <div class="mainCon">
+                <div class="mainBox">
+                    <img src="../myungwook/img/logo.png" class="pwImg" width="175px">
+
+                    <form name="signIn">
+                        <input name="id" id="id" class="inputCon" type="text" placeholder="사용자이름">
+                        <input name="ps" id="ps" class="inputCon" type="password" placeholder="비밀번호">
+                        <button id="btn" type="button" value="click" disabled="disabled" class="blueBtn">로그인</button>
+                    </form>
+
+                    <script>
+                        $("#btn").click(function(){
+                            var sign={
+                                "id" : $("#id").val(),
+                                "pw" : $("#ps").val()
+                            }
+        
+                            var test1=$("#id").val();
+                            var test2=$("#ps").val();
+        
+                            var sendSign = JSON.stringify(sign);
+        
+                            $.ajax({
+                                type:"post",
+                                url:"http://localhost:8080/api/login",
+                                headers: {'Content-Type': 'application/json'},
+                                data : sendSign,
+                                success:function(){
+                                    location.replace("..\\myungwook\\feed.html");
+                                },
+                                error:function(e){
+                                alert("id 혹은 password를 확인하세요");
+		     }
+                            });
+                        });
+                    </script>
+
+                    <p class="or">------------------ 또는 ------------------</p>
+                    <a href="./findPw.html" ><p class="blueP">비밀번호를 잊으셨나요?</p></a>
+                </div>
+            
+                <div class="signUp">
+                    <p class="idF">계정이 없으신가요? </p>
+                    <a href="./singUp.html" ><p class="signBF"> 가입하기</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+body {
+  padding-top: 55px;
+}
+
+/* 상단 네비게이션 설정 */
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 47px;
+  background-color: white;
+  border-bottom: 1px solid rgba(197, 197, 197, 0.788);
+}
+
+#nav {
+  margin: 0px auto;
+  width: 975px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav > div {
+  align-self: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icons > a > img {
+  height: 22px;
+  margin: 0px 0px 0px 24px;
+  align-self: center;
+  cursor: pointer;
+}
+
+#profile_logo {
+  border-radius: 50%;
+}
+
+.logo > img {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* 피드부분 */
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 975px;
+  margin: 0px auto;
+}
+
+.main_left {
+  width: 600px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(197, 197, 197, 0.788);
+}
+
+.main_right {
+  width: 293px;
+}
+
+/* 피드의 헤더 */
+.main_left > header {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 60px;
+}
+
+header > div {
+  align-self: center;
+}
+
+.owner {
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.owner:hover {
+  text-decoration: underline;
+}
+
+header > div > img {
+  cursor: pointer;
+  padding-right: 15px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.feed_owner {
+  display: flex;
+  padding-left: 15px;
+}
+
+.feed_owner > div > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.feed_owner > div {
+  padding-right: 16px;
+  align-self: center;
+}
+
+/* 피드 이미지 및 댓글 */
+article > img {
+  width: 600px;
+  height: 600px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment > div {
+  margin: 4px 0px 0px;
+  padding: 0px 16px;
+}
+
+.comment > .like {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like > div > img {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.like_count {
+  display: flex;
+}
+
+.like_count > div {
+  margin-right: 5px;
+}
+
+.like_count > div > img {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.all_comment {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 0px 5px;
+  margin: 0px 0px 0px -5px;
+  line-height: 25px;
+}
+
+.all_comment > div {
+  width: 560px;
+}
+
+.view_all_comment {
+  color: rgba(128, 128, 128, 0.589);
+  font-weight: normal;
+}
+
+.view_comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload_time {
+  margin: 0px 0px;
+  font-size: 12px;
+  font-weight: lighter;
+  color: rgba(128, 128, 128, 0.589);
+  line-height: 25px;
+}
+
+.write_comment {
+  display: flex;
+  height: 56px;
+  border-top: 1px solid rgba(197, 197, 197, 0.788);
+}
+
+.write_comment > div {
+  margin: auto 0;
+  vertical-align: middle;
+}
+
+.comment_body {
+  background: 0 0;
+  font-size: inherit;
+  height: 30px;
+  max-height: 80px;
+  outline: 0;
+  padding: 0;
+  resize: none;
+  width: 490px;
+  height: 18px;
+  vertical-align: center;
+  border: 0;
+}
+
+.comment_btn {
+  color: rgba(0, 140, 255, 0.3);
+  font-weight: bolder;
+}
+
+.emoticon > img {
+  width: 24px;
+  height: 24px;
+  padding: 8px 16px 8px 0px;
+}
+
+.heart {
+  background: url("img/heart.svg") no-repeat;
+  width: 13px;
+  cursor: pointer;
+}
+
+.red_heart {
+  background: url("img/like.svg") no-repeat;
+  width: 13px;
+  cursor: pointer;
+}
+.commentlist {
+  display: flex;
+  justify-content: space-between;
+}

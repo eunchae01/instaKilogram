@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+.backG {
+  background-color: rgb(248, 248, 248);
+}
+
+.center {
+  width: 100vw;
+  background-color: rgb(248, 248, 248);
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  width: 945px;
+  margin-left: 25%;
+  padding-top: 150px;
+}
+
+.pwmain {
+  display: flex;
+  width: 945px;
+  margin-left: 37%;
+  padding-top: 200px;
+}
+
+.mainCon {
+  margin-top: 75px;
+  margin-left: 25px;
+  width: 350px;
+  height: 375px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.signUp {
+  display: flex;
+  width: 350px;
+  height: 50px;
+  margin-top: 75px;
+  padding-top: 25px;
+  background-color: white;
+  border: 1px solid rgb(190, 190, 190);
+  text-align: center;
+  font-size: 14px;
+}
+
+.idF {
+  text-align: center;
+  padding-left: 80px;
+}
+
+.signBF {
+  font-weight: bold;
+  color: rgb(73, 154, 247);
+  text-align: center;
+}
+
+.blueP {
+  color: rgb(42, 42, 143);
+  font-size: smaller;
+  padding-top: 15px;
+}
+
+.pwImg {
+  margin-top: 15px;
+}
+
+.grayF {
+  color: rgb(134, 134, 134);
+  /* font-weight: lighter; */
+  font-size: 14px;
+}
+
+.container {
+  width: 350px;
+  height: 525px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid rgb(190, 190, 190);
+  /* border-color: lightslategray; */
+}
+
+.inputCon {
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 275px;
+  height: 35px;
+  border: 1px solid rgb(202, 202, 202);
+  background-color: rgb(248, 248, 248);
+  color: black;
+  padding-left: 10px;
+}
+
+.blueBtn {
+  margin-top: 15px;
+  width: 293px;
+  height: 35px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 140, 255, 0.3);
+  border-radius: 5px;
+  border: solid;
+  margin-bottom: 25px;
+}
+
+.or {
+  color: rgb(134, 134, 134);
+  margin-bottom: 15px;
+}
+
+.boldF > a {
+  color: black;
+}
+
+.boldF {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.loginBack {
+  margin-top: 103px;
+  height: 35px;
+  background-color: rgb(248, 248, 248);
+  padding-top: 15px;
+}
+
+.grayB {
+  color: rgb(134, 134, 134);
+  font-weight: bold;
+}
+
+.signmain {
+  display: flex;
+  width: 945px;
+  margin-left: 37%;
+  padding-top: 200px;
+}
+
+.signCon {
+  margin-left: 25px;
+  width: 350px;
+  height: 400px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.signLog {
+  display: flex;
+  width: 350px;
+  height: 50px;
+  margin-top: 25px;
+  padding-top: 25px;
+  background-color: white;
+  border: 1px solid rgb(190, 190, 190);
+  text-align: center;
+
+  font-size: 14px;
+}

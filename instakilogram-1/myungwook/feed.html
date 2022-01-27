@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feed.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="feed.js"></script>
+    <script src="./feed.json" type="text/javascript"></script>
+    <title>Instakilogram</title>
+
+</head>
+<body>
+    <div id="header">
+        <div id="nav">
+            <div class="logo">
+                <a href="feed.html"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div>
+                <div class="icons">
+                    <a href="feed.html"><img src="img/home.svg" alt=""></a>
+                    <a href="#"><img src="img/add.svg" alt=""></a>
+                    <a href="#"><img src="img/heart.svg" alt=""></a>
+                    <a href="../ulim/main.html"><img id="profile_logo" src="img/cat.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+    <div class="main">
+        <!--게시글 1번-->
+        <div class="main_left">
+            <header>
+                <div class="feed_owner">
+                    <div><img src="#" class="test0" alt=""></div>
+                    <div class="owner0" id="owner0"></div>
+                </div>
+                <div>
+                    <img src="img/more.svg" alt="">
+                </div>
+            </header>
+            <article>
+                <img src="#" class="test0" alt="">
+            </article>
+            <div class="comment">
+                <div class="like">
+                    <div>
+                        <img id="feed_like" onclick="like()" src="img/heart.svg" alt="">
+                        <img src="img/comment.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/save.svg" alt="">
+                    </div>
+                </div>
+                <div class="like_count">
+                    <div><img src="#" id="test0" alt=""></div>
+                    <a href="#" class="">luculent_wook</a>
+                    <div>님</div>
+                    <a href="#">여러 명</a>
+                    <div>이 좋아합니다.</div>
+                </div>
+                <div class="view_comment">
+                    <div class="owner_comment">
+                        <a class="owner0" href="#" ></a>
+                        <span class="content0"></span>
+                    </div>
+                    <div class="all_comment">
+                        <div>
+                            <a class="view_all_comment" href="#">댓글 5개 모두 보기</a>
+                        </div>
+
+                        <!-- test -->
+                        <div class="other_comment">                       
+                                <a href="#" id = "id"></a>
+                                <span id = "content" ></span>
+                        </div>
+                        <script type = "text/javascript" >
+                            var j;
+                            $('other_comment').ready(function(){
+                                for(i=1; i<3; i++){
+                                $.ajax({
+                        
+                                    url : "http://localhost:8080/api/comment/"+i,
+                                    type : "get",
+                                    dataType : "json",
+                                    success : function(data){
+			if(i==1){
+			    console.log(data);
+			}
+                                        
+                                        $('.other_comment').empty();
+                                        $.each(data, function(item, item){
+                                            var comDiv = "";
+                                            for(j = 0; j < item.length; j++){
+
+                                                comDiv += "<div class='other_comment'"
+                                                    + $(".other_comment").append("<div class='commentlist'><div><a href='#' >"
+                                                        + item[j].id + " " + "</a>"
+                                                        +item[j].content + "</div><div class='heart' id=comment" + [j] 
+                                                        + " onclick='comment_like("+[j]+")'></br></div></div>");
+
+                                            }
+                                        });
+                                    },
+                                    error : function(){
+                                        alert('error');
+                                    }
+                          
+                            });
+                        }
+                        });
+                        
+                        </script>
+
+                    </div>
+                    <div class="upload_time">
+                        54분 전
+                    </div>
+                    <p id="result"></p>
+                </div>
+                <div class="write_comment">
+                    <div class="emoticon">
+                        <img src="img/smile.svg" alt="">
+                    </div>
+                    
+                        <div>
+                        <form action="" method="get" name="reply">
+                        <input type="text" name="comment_body" id="comment_body" class="comment_body" cols="30" rows="1" placeholder="댓글 달기..."></textarea>    
+                        </div>
+                    <div class="comment_btn" >게시</div>
+                        
+                        </form>
+
+                    <script>
+                        $("#button").click(function(){
+                            var replies = $("#comment_body").val();
+                            var input = document.getElementById("comment_body");
+                            input.value = "";
+                            
+                            $.ajax({
+                            type:"get",
+                            url : "./feed.html",
+                            dataType : "html",
+                            data : replies,
+                            success : function(data){
+                                $("#result").html(replies)
+                
+                                input.value
+                            }
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 게시글 2번 -->
+        <div class="main_left">
+            <header>
+                <div class="feed_owner">
+                    <div><img src="#" class="test1" alt=""></div>
+                    <div class="owner1">luculent_sso</div>
+                </div>
+                <div>
+                    <img src="img/more.svg" alt="">
+                </div>
+            </header>
+            <article>
+                <img src="#" class="test1" alt="">
+            </article>
+            <div class="comment">
+                <div class="like">
+                    <div>
+                        <img id="feed_like" onclick="like()" src="img/heart.svg" alt="">
+                        <img src="img/comment.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/save.svg" alt="">
+                    </div>
+                </div>
+                <div class="like_count">
+                    <div><img src="#" class="test1" alt=""></div>
+                    <a href="#">luculent_sso</a>
+                    <div>님</div>
+                    <a href="#">여러 명</a>
+                    <div>이 좋아합니다.</div>
+                </div>
+                <div class="view_comment">
+                    <div class="owner_comment">
+                        <a class="owner1" href="#"></a>
+                        <span class="content1"></span>
+                    </div>
+                    <div class="all_comment">
+                        <div>
+                            <a class="view_all_comment" href="#">댓글 5개 모두 보기</a>
+                        </div>
+
+                        <div class="other_comment">                       
+                            <a href="#" id = "id"></a>
+                            <span id = "content" ></span>
+                    </div>
+
+                    <div class="upload_time">
+                        54분 전
+                    </div>
+                </div>
+                <div class="write_comment">
+                    <div class="emoticon">
+                        <img src="img/smile.svg" alt="">
+                    </div>
+                    <div>
+                        <input type="text" name="comment_body" class="comment_body" cols="30" rows="1" placeholder="댓글 달기..."></textarea>
+                    </div>
+                    <div class="comment_btn" >게시</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

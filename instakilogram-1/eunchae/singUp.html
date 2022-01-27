@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <title>Instakilogram</title>
+</head>
+<body>
+    <div class="center" >
+        <div class="signmain">
+        <div class="signCon">
+            <img src="../myungwook/img/logo.png" class="pwImg" width="175px">
+            <p class="grayB">친구들의 사진과 동영상을</p>
+            <p class="grayB">보려면 가입하세요.</p>
+            <p class="or">------------------ 또는 ------------------</p>
+
+            <form name="signUp" >
+                <input id="sign_name" class="inputCon" type="text" placeholder="성명">
+                <input id="sign_id" class="inputCon" type="text" placeholder="사용자이름">
+                <input id="sign_ps" class="inputCon" type="text" placeholder="비밀번호">
+                <button id="signBtn" value="click" type="button" disabled="disabled" class="blueBtn">가입</button>
+            </form>
+
+            <script>
+                $("#signBtn").click(function(){
+                    var obj={
+                        "id" : $("#sign_id").val(),
+                        "name" : $("#sign_name").val(),
+                        "pw" : $("#sign_ps").val()
+                    }
+                    var sendObj = JSON.stringify(obj);
+
+                    $.ajax({
+                        type:"post",
+                        url:"http://localhost:8080/api/signup",
+	                    headers : {'Content-Type' : 'application/json'},
+                        data : sendObj,
+                            success : function(){
+                                location.replace("main.html");
+                            },
+                            error : function(e){
+                                alert("err");
+                            }
+                    });
+                });
+                
+            </script>
+
+            <div class="signLog">
+                <p class="idF">계정이 있으신가요?</p>
+                <a href="./main.html"><p class="signBF">로그인</p></a>
+            </div>
+
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
